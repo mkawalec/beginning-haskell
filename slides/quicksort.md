@@ -5,4 +5,4 @@ stuff ourselves?
 
     qs :: Ord a => [a] -> [a]
     qs [] = []
-    qs (x:xs) = qs [y | y <- xs, y <= x] ++ [x] ++ [y | y <- xs, y > x]
+    qs (x:xs) = qs [y | y <- xs, y <= x] ++ [x] ++ qs [y | y <- xs, y > x]
